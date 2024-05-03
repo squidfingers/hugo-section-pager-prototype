@@ -6,13 +6,13 @@ Given this content structure:
 
 ```
 content/
-  category-1/
-    _index.md
-    page-1.md
-    page-2.md
-    ...
-  category-2/
-  category-3/
+├── category-1/
+│   ├── _index.md
+│   ├── page-1.md
+│   ├── page-2.md
+│   └── page-3.md
+├── category-2/
+└── category-3/
 ```
 
 Range through all regular pages, sorting them by section weight first, then by page weight:
@@ -27,14 +27,14 @@ Given this content structure:
 
 ```
 content/
-  about/
-  category-1/
-    _index.md
-    page-1.md
-    page-2.md
-    ...
-  category-2/
-  category-3/
+├── about/
+├── category-1/
+│   ├── _index.md
+│   ├── page-1.md
+│   ├── page-2.md
+│   └── page-3.md
+├── category-2/
+└── category-3/
 ```
 
 Only range through regular pages in arbitrary sections:
@@ -50,16 +50,16 @@ Given this content structure:
 
 ```
 content/
-  about/
-  portfolio/
-    _index.md
-    category-1/
-      _index.md
-      page-1.md
-      page-2.md
-      ...
-    category-2/
-    category-3/
+├── about/
+└── portfolio/
+    ├── _index.md
+    ├── category-1/
+    │   ├── _index.md
+    │   ├── page-1.md
+    │   ├── page-2.md
+    │   └── page-3.md
+    ├── category-2/
+    └── category-3/
 ```
 
 Only range through regular pages in sections under the current top-level section:
