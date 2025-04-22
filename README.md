@@ -15,7 +15,7 @@ content/
 └── category-3/
 ```
 
-Range through all regular pages, sorting them by section weight first, then by page weight:
+Get all regular pages, sorting them by section weight first, then by page weight:
 
 ```go-template
 {{ $pages := sort site.RegularPages.ByWeight "Parent.Weight" }}
@@ -37,7 +37,7 @@ content/
 └── category-3/
 ```
 
-Only range through regular pages in arbitrary sections:
+Get all regular pages in arbitrary sections:
 
 ```go-template
 {{ $sections := slice "category-1" "category-2" "category-3" }}
@@ -62,7 +62,7 @@ content/
     └── category-3/
 ```
 
-Only range through regular pages in sections under the current top-level section:
+Get all regular pages in sections under the current top-level section:
 
 ```go-template
 {{ $pages := sort .FirstSection.RegularPagesRecursive.ByWeight "Parent.Weight" }}
@@ -70,7 +70,7 @@ Only range through regular pages in sections under the current top-level section
 
 ---
 
-After you have a collection of pages, you can display the pager buttons in the single page template using the `.Next` and `.Previous` methods:
+After you have a collection of pages, you can display the pager buttons in the single page template using the `.Next` and `.Prev` methods:
 
 ```go-template
 {{ with $pages.Next . }}<a href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}
